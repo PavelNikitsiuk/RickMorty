@@ -1,23 +1,23 @@
-function getProducts() {
-	return fetch("/products")
+const API_URL = "https://rickandmortyapi.com/api/character/";
+function loadCharacters() {
+	return fetch(API_URL)
 		.then(handleErrors)
 		.then(res => res.json());
 }
 
-export function fetchProducts() {
+export default function fetchCharacters() {
 	return dispatch => {
 		dispatch(fetchCharactersBegin());
-		return getProducts()
+		return loadCharacters()
 			.then(json => {
-				dispatch(fetchCharactersSuccess(json.products));
-				return json.products;
+				dispatch(fetchCharactersSuccess(json));
+				return json;
 			})
 			.catch(error => dispatch(fetchCharactersFailure(error))
 			);
 	};
 }
 
-// Handle HTTP errors since fetch won't.
 function handleErrors(response) {
 	if (!response.ok) {
 		throw Error(response.statusText);
@@ -33,9 +33,9 @@ export const fetchCharactersBegin = () => ({
 	type: FETCH_CHARACTERS_BEGIN
 });
 
-export const fetchCharactersSuccess = characters => ({
+export const fetchCharactersSuccess = ({info, results}) => ({
 	type: FETCH_CHARACTERS_SUCCESS,
-	payload: { characters }
+	payload: { info, results }
 });
 
 export const fetchCharactersFailure = error => ({
