@@ -1,17 +1,35 @@
 import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from '../reducers';
 import thunk from "redux-thunk";
+import {loadState, saveState} from "./localStorage";
+import {fetchCharacters} from "../constants/CharactersActions";
 
+const persistedState = loadState();
 
-export default (initialState) => {
-	/* eslint-disable no-underscore-dangle */
+const configureStore = () => {
 	return createStore(
 		rootReducer,
-		initialState,
+		persistedState,
 		compose(
 			applyMiddleware(thunk),
-			window.devToolsExtension ? window.devToolsExtension() : f => f
+			window.__REDUX_DEVTOOLS_EXTENSION__ ? () => window.__REDUX_DEVTOOLS_EXTENSION__ : f => f
 		)
 	);
-	/* eslint-enable */
 };
+
+const store = configureStore();
+
+// todo: refactor this...
+(() => {
+	if (!persistedState) {
+		store.dispatch(fetchCharacters());
+	}
+})();
+
+store.subscribe(() => {
+	saveState({
+		charactersReducer: store.getState().charactersReducer
+	});
+});
+
+export default store;

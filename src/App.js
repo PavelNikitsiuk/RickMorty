@@ -4,13 +4,14 @@ import {Provider} from 'react-redux';
 import {Route} from "react-router";
 import {BrowserRouter, Switch} from 'react-router-dom';
 
-import configureStore from './store/configureStore';
-
 import NotFound from './components/NotFound';
+// todo: create index export
 import Characters from './containers/CharacterContainer';
-import CharacterDetails from './components/CharacterDetails';
+import CharacterDetails from './containers/CharacterDetailsContainer';
 
-const store = configureStore();
+// todo: create action folder
+import {fetchCharacters} from "./constants/CharactersActions";
+import store from './store/configureStore';
 
 class App extends Component {
 	render() {
@@ -18,7 +19,7 @@ class App extends Component {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path="/" component={Characters}/>
-					<Route path="/character/:id" component={CharacterDetails}/>
+					<Route path="/:id" component={CharacterDetails}/>
 					<Route component={NotFound}/>
 				</Switch>
 			</BrowserRouter>

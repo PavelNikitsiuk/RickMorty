@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import Character from './Character';
-import fetchCharacters from '../constants/CharactersActions';
 
 class Characters extends PureComponent {
 	static propTypes = {
@@ -18,20 +17,14 @@ class Characters extends PureComponent {
 		characters: [],
 	};
 
-	componentDidMount() {
-		this.props.dispatch(fetchCharacters());
-	}
-
 	render() {
-		const { characters, history } = this.props;
+		const { characters } = this.props;
 
 		return (
-			<div className="todos">
-				<ul>
-					{characters.map((character, id) => (
-						<Character history={history} key={id} character={character}/>
-					))}
-				</ul>
+			<div className="container">
+				{characters.map((character, id) => (
+					<Character key={id} character={character}/>
+				))}
 			</div>
 		);
 	}

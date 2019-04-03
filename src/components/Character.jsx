@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import {withRouter} from "react-router";
 
 class Character extends PureComponent {
 	static propTypes = {
@@ -8,14 +9,14 @@ class Character extends PureComponent {
 	};
 
 	onDetailsPressed(id) {
-		this.props.history.push(`/character/${id}`, this.props.character)
+		this.props.history.push(`/${id}`)
 	};
 
 	render() {
 		const {id, name, image} = this.props.character;
 
 		return (
-			<div onClick={this.onDetailsPressed.bind(this, id)}>
+			<div className="card" onClick={this.onDetailsPressed.bind(this, id)}>
 				<img src={image} alt={name}/>
 				<h2>{name}</h2>
 			</div>
@@ -23,4 +24,4 @@ class Character extends PureComponent {
 	}
 }
 
-export default Character;
+export default withRouter(Character);

@@ -1,37 +1,42 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-class Characters extends PureComponent {
+class CharacterDetails extends PureComponent {
 	static propTypes = {
 		detailInfo: PropTypes.shape({
 			id: PropTypes.number,
 			name: PropTypes.string,
-			image: PropTypes.string,
+			location: PropTypes.shape({
+				name: PropTypes.string
+			}),
+			episodes: PropTypes.array
 		}),
 	};
 
-	static defaultProps = {
-		detailInfo: {
-			id: 1,
-			name: "Test",
-			image: "#"
-		}
-	};
-
-	componentDidMount() {
-		console.log(123);
-	}
-
 	render() {
-		const {detailInfo} = this.props;
+		const {characterData, episodes} = this.props;
 
 		return (
-			<div className="todos">
-				<span>Name</span>
-				<span>{detailInfo.name}</span>
+			<div className="detailsList">
+				<div>
+					<span>Name</span>
+					<span>{characterData.name}</span>
+				</div>
+				<div>
+					<span>Location Name</span>
+					<span>{characterData.location.name}</span>
+				</div>
+				<div>
+					{episodes.map((episode, id) => (
+						<div key={id}>
+							<span>{episode.name}</span>
+							<span>{episode.episode}</span>
+						</div>
+					))}
+				</div>
 			</div>
 		);
 	}
 }
 
-export default Characters;
+export default CharacterDetails;

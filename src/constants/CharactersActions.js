@@ -1,14 +1,15 @@
-const API_URL = "https://rickandmortyapi.com/api/character/";
-function loadCharacters() {
-	return fetch(API_URL)
+const INITIAL_SERVICE_URL = "https://rickandmortyapi.com/api/character/";
+
+const loadCharacters = url => {
+	return fetch(url)
 		.then(handleErrors)
 		.then(res => res.json());
-}
+};
 
-export default function fetchCharacters() {
+export const fetchCharacters = (url = INITIAL_SERVICE_URL) => {
 	return dispatch => {
 		dispatch(fetchCharactersBegin());
-		return loadCharacters()
+		return loadCharacters(url)
 			.then(json => {
 				dispatch(fetchCharactersSuccess(json));
 				return json;
@@ -16,14 +17,12 @@ export default function fetchCharacters() {
 			.catch(error => dispatch(fetchCharactersFailure(error))
 			);
 	};
-}
+};
 
-function handleErrors(response) {
-	if (!response.ok) {
-		throw Error(response.statusText);
-	}
+const handleErrors = response => {
+	if (!response.ok) throw Error(response.statusText);
 	return response;
-}
+};
 
 export const FETCH_CHARACTERS_BEGIN = 'FETCH_CHARACTERS_BEGIN';
 export const FETCH_CHARACTERS_SUCCESS = 'FETCH_CHARACTERS_SUCCESS';
