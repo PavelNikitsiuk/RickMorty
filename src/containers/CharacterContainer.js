@@ -1,38 +1,49 @@
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Characters from '../components/Characters';
-import { withRouter } from 'react-router-dom'
-import {fetchCharacters} from "../constants/CharactersActions";
+import {withRouter} from 'react-router-dom'
+import {fetchCharacters} from '../actions/CharactersActions';
+import styles from './CharacterContainer.module.css'
+import 'intersection-observer';
 
 export class CharacterScrollContainer extends Component {
 	constructor(props) {
 		super(props);
-		this.handleScroll = this.handleScroll.bind(this);
+		this.state = {prevY: 0};
+
+		this.handleObserver = this.handleObserver.bind(this);
 	}
 
 	componentDidMount() {
-		window.addEventListener("scroll", this.handleScroll);
+		let options = {root: null, rootMargin: "0px", threshold: 1.0};
+
+		this.observer = new IntersectionObserver(this.handleObserver, options);
+		this.observer.observe(this.loaderRef);
 	}
 
-	componentWillUnmount() {
-		window.removeEventListener("scroll", this.handleScroll);
+	handleObserver(entities) {
+		const y = entities[0].boundingClientRect.y;
+		let {info} = this.props;
+
+		if (this.state.prevY > y && info.next) {
+			this.props.dispatch(fetchCharacters(info.next));
+		}
+
+		this.setState({prevY: y});
 	}
-
-	handleScroll = () => {
-		let scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-		let scrollHeight = (document.documentElement && document.documentElement.scrollHeight) || document.body.scrollHeight;
-		let clientHeight = document.documentElement.clientHeight || window.innerHeight;
-		let scrolledToBottom = Math.ceil(scrollTop + clientHeight) >= scrollHeight;
-		let {next} = this.props.info;
-
-		if (scrolledToBottom && next) this.props.dispatch(fetchCharacters(next));
-	};
 
 	render() {
+		const {loading, info, characters} = this.props;
+		const spinnerStyle = loading ? styles.ringSpinner : styles.hideSpinner;
 
 		return (
-			<div onScroll={this.handleScroll}>
-				<Characters characters={this.props.characters}/>
+			<div>
+				<Characters nextRef={info.next} characters={characters}/>
+
+				<div ref={loaderRef => (this.loaderRef = loaderRef)}
+					 className={styles.loaderContainer}>
+					<div className={spinnerStyle}/>
+				</div>
 			</div>
 		)
 	}
@@ -48,5 +59,9 @@ const mapStateToProps = state => {
 	};
 };
 
+const mapDispatchToProps = dispatch => ({
+	fetchCharacters: next => dispatch(fetchCharacters(next)),
+	dispatch
+});
 
-export default withRouter(connect(mapStateToProps)(CharacterScrollContainer));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CharacterScrollContainer));

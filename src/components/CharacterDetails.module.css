@@ -1,0 +1,32 @@
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.episodesContainer {
+    margin-top: 200px;
+}
+
+
+.introductionContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.name {
+    font-size: 64px;
+    font-weight: 700;
+}
+.location {
+    margin-top: 20px;
+}
+
+.episodesTitle {
+    text-align: center;
+    font-size: 64px;
+}

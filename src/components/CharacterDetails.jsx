@@ -1,38 +1,39 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import Episode from './Episode';
+import styles from './CharacterDetails.module.css';
 
 class CharacterDetails extends PureComponent {
 	static propTypes = {
-		detailInfo: PropTypes.shape({
-			id: PropTypes.number,
+		characterData: PropTypes.shape({
 			name: PropTypes.string,
 			location: PropTypes.shape({
 				name: PropTypes.string
 			}),
-			episodes: PropTypes.array
 		}),
+		episodes: PropTypes.array
 	};
 
 	render() {
 		const {characterData, episodes} = this.props;
 
 		return (
-			<div className="detailsList">
-				<div>
-					<span>Name</span>
-					<span>{characterData.name}</span>
+			<div>
+				<div className={styles.introductionContainer}>
+					<div className={styles.name}>
+						<span>{characterData.name}</span>
+					</div>
+					<div className={styles.location}>
+						<span>Current Location - {characterData.location.name}</span>
+					</div>
 				</div>
-				<div>
-					<span>Location Name</span>
-					<span>{characterData.location.name}</span>
-				</div>
-				<div>
-					{episodes.map((episode, id) => (
-						<div key={id}>
-							<span>{episode.name}</span>
-							<span>{episode.episode}</span>
-						</div>
-					))}
+				<div className={styles.episodesContainer}>
+					<div className={styles.episodesTitle}>Last Episodes</div>
+					<div className={styles.cardContainer}>
+						{episodes.map((episode, id) => (
+							<Episode episodeData={episode} key={id}/>
+						))}
+					</div>
 				</div>
 			</div>
 		);

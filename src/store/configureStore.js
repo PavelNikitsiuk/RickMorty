@@ -2,7 +2,7 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import rootReducer from '../reducers';
 import thunk from "redux-thunk";
 import {loadState, saveState} from "./localStorage";
-import {fetchCharacters} from "../constants/CharactersActions";
+import {fetchCharacters} from "../actions/CharactersActions";
 
 const persistedState = loadState();
 
@@ -19,17 +19,15 @@ const configureStore = () => {
 
 const store = configureStore();
 
-// todo: refactor this...
-(() => {
-	if (!persistedState) {
-		store.dispatch(fetchCharacters());
-	}
-})();
+if (!persistedState) {
+	store.dispatch(fetchCharacters());
+}
 
-store.subscribe(() => {
-	saveState({
-		charactersReducer: store.getState().charactersReducer
-	});
-});
+const storeChangeHandler = () => {
+	let charactersReducer = store.getState().charactersReducer;
+	saveState({charactersReducer});
+};
+
+store.subscribe(storeChangeHandler);
 
 export default store;

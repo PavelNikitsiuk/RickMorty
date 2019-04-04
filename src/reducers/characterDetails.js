@@ -1,45 +1,39 @@
 import {
-	CHARACTER_DETAILS_OPENED,
 	FETCH_EPISODES_BEGIN,
 	FETCH_EPISODES_SUCCESS,
 	FETCH_EPISODES_FAILURE
-} from "../constants/CharacterDetailsActions";
+} from "../constants/CharacterDetailsActionsConstants";
 
-const initialState = {
+export const initialState = {
 	characterData: {
 		id: 1,
 		name: "",
 		location: {name: ""},
 	},
+	error: null,
 	episodes: []
 };
 
-export default function characterDetailsReducer(state = initialState, action) {
+export const characterDetailsReducer = (state = initialState, action) => {
 	switch (action.type) {
-		case CHARACTER_DETAILS_OPENED:
-			return {
-				...state,
-				characterData: action.payload.characterData
-			};
 		case FETCH_EPISODES_BEGIN:
 			return {
 				...state,
-				error: null,
-				loading: true,
+				loading: action.loading,
 			};
 		case FETCH_EPISODES_SUCCESS:
 			return {
 				...state,
-				episodes: action.payload
+				episodes: action.payload,
+				loading: action.loading
 			};
 		case FETCH_EPISODES_FAILURE:
 			return {
 				...state,
-				characters: [],
-				loading: false,
+				loading: action.loading,
 				error: action.payload.error,
 			};
 		default:
 			return state;
 	}
-}
+};

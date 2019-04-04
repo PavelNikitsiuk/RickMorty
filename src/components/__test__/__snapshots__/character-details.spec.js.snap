@@ -1,0 +1,801 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterDetails CharacterDetails renders properly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CharacterDetails
+    characterData={
+      Object {
+        "location": Object {
+          "name": "string",
+        },
+        "name": "string",
+      }
+    }
+    episodes={Array []}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="introductionContainer"
+        >
+          <div
+            className="name"
+          >
+            <span>
+              string
+            </span>
+          </div>
+          <div
+            className="location"
+          >
+            <span>
+              Current Location - 
+              string
+            </span>
+          </div>
+        </div>,
+        <div
+          className="episodesContainer"
+        >
+          <div
+            className="episodesTitle"
+          >
+            Last Episodes
+          </div>
+          <div
+            className="cardContainer"
+          />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="name"
+            >
+              <span>
+                string
+              </span>
+            </div>,
+            <div
+              className="location"
+            >
+              <span>
+                Current Location - 
+                string
+              </span>
+            </div>,
+          ],
+          "className": "introductionContainer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <span>
+                string
+              </span>,
+              "className": "name",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "string",
+              },
+              "ref": null,
+              "rendered": "string",
+              "type": "span",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <span>
+                Current Location - 
+                string
+              </span>,
+              "className": "location",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Current Location - ",
+                  "string",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Current Location - ",
+                "string",
+              ],
+              "type": "span",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="episodesTitle"
+            >
+              Last Episodes
+            </div>,
+            <div
+              className="cardContainer"
+            />,
+          ],
+          "className": "episodesContainer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Last Episodes",
+              "className": "episodesTitle",
+            },
+            "ref": null,
+            "rendered": "Last Episodes",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [],
+              "className": "cardContainer",
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="introductionContainer"
+          >
+            <div
+              className="name"
+            >
+              <span>
+                string
+              </span>
+            </div>
+            <div
+              className="location"
+            >
+              <span>
+                Current Location - 
+                string
+              </span>
+            </div>
+          </div>,
+          <div
+            className="episodesContainer"
+          >
+            <div
+              className="episodesTitle"
+            >
+              Last Episodes
+            </div>
+            <div
+              className="cardContainer"
+            />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="name"
+              >
+                <span>
+                  string
+                </span>
+              </div>,
+              <div
+                className="location"
+              >
+                <span>
+                  Current Location - 
+                  string
+                </span>
+              </div>,
+            ],
+            "className": "introductionContainer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  string
+                </span>,
+                "className": "name",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "string",
+                },
+                "ref": null,
+                "rendered": "string",
+                "type": "span",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  Current Location - 
+                  string
+                </span>,
+                "className": "location",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Current Location - ",
+                    "string",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Current Location - ",
+                  "string",
+                ],
+                "type": "span",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="episodesTitle"
+              >
+                Last Episodes
+              </div>,
+              <div
+                className="cardContainer"
+              />,
+            ],
+            "className": "episodesContainer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Last Episodes",
+                "className": "episodesTitle",
+              },
+              "ref": null,
+              "rendered": "Last Episodes",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [],
+                "className": "cardContainer",
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;
+
+exports[`characters shallowCharacterDetails renders properly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CharacterDetails
+    characterData={
+      Object {
+        "location": Object {
+          "name": "string",
+        },
+        "name": "string",
+      }
+    }
+    episodes={Array []}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="introductionContainer"
+        >
+          <div
+            className="name"
+          >
+            <span>
+              string
+            </span>
+          </div>
+          <div
+            className="location"
+          >
+            <span>
+              Current Location - 
+              string
+            </span>
+          </div>
+        </div>,
+        <div
+          className="episodesContainer"
+        >
+          <div
+            className="episodesTitle"
+          >
+            Last Episodes
+          </div>
+          <div
+            className="cardContainer"
+          />
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="name"
+            >
+              <span>
+                string
+              </span>
+            </div>,
+            <div
+              className="location"
+            >
+              <span>
+                Current Location - 
+                string
+              </span>
+            </div>,
+          ],
+          "className": "introductionContainer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <span>
+                string
+              </span>,
+              "className": "name",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "string",
+              },
+              "ref": null,
+              "rendered": "string",
+              "type": "span",
+            },
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <span>
+                Current Location - 
+                string
+              </span>,
+              "className": "location",
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Current Location - ",
+                  "string",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Current Location - ",
+                "string",
+              ],
+              "type": "span",
+            },
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="episodesTitle"
+            >
+              Last Episodes
+            </div>,
+            <div
+              className="cardContainer"
+            />,
+          ],
+          "className": "episodesContainer",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Last Episodes",
+              "className": "episodesTitle",
+            },
+            "ref": null,
+            "rendered": "Last Episodes",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [],
+              "className": "cardContainer",
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="introductionContainer"
+          >
+            <div
+              className="name"
+            >
+              <span>
+                string
+              </span>
+            </div>
+            <div
+              className="location"
+            >
+              <span>
+                Current Location - 
+                string
+              </span>
+            </div>
+          </div>,
+          <div
+            className="episodesContainer"
+          >
+            <div
+              className="episodesTitle"
+            >
+              Last Episodes
+            </div>
+            <div
+              className="cardContainer"
+            />
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="name"
+              >
+                <span>
+                  string
+                </span>
+              </div>,
+              <div
+                className="location"
+              >
+                <span>
+                  Current Location - 
+                  string
+                </span>
+              </div>,
+            ],
+            "className": "introductionContainer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  string
+                </span>,
+                "className": "name",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "string",
+                },
+                "ref": null,
+                "rendered": "string",
+                "type": "span",
+              },
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": <span>
+                  Current Location - 
+                  string
+                </span>,
+                "className": "location",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Current Location - ",
+                    "string",
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Current Location - ",
+                  "string",
+                ],
+                "type": "span",
+              },
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="episodesTitle"
+              >
+                Last Episodes
+              </div>,
+              <div
+                className="cardContainer"
+              />,
+            ],
+            "className": "episodesContainer",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Last Episodes",
+                "className": "episodesTitle",
+              },
+              "ref": null,
+              "rendered": "Last Episodes",
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [],
+                "className": "cardContainer",
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

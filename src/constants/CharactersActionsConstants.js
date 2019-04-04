@@ -1,0 +1,5 @@
+export const INITIAL_SERVICE_URL = "https://rickandmortyapi.com/api/character/";
+
+export const FETCH_CHARACTERS_BEGIN = 'FETCH_CHARACTERS_BEGIN';
+export const FETCH_CHARACTERS_SUCCESS = 'FETCH_CHARACTERS_SUCCESS';
+export const FETCH_CHARACTERS_FAILURE = 'FETCH_CHARACTERS_FAILURE';

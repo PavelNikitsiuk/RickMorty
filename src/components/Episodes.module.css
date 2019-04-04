@@ -1,0 +1,21 @@
+.button {
+    height: 160px;
+    padding: 16px;
+    margin: 0 10px;
+    position: relative;
+    background: lightcyan;
+    transition: transform .2s ease, box-shadow .2s ease, -webkit-transform .2s ease, -moz-transform .2s ease, -o-transform .2s ease, -webkit-box-shadow .2s ease;
+}
+
+.button:hover {
+    transform: translate3d(8px, -8px, 0);
+    box-shadow: -8px 8px 0 0 #2a9095, -7px 7px 0 0 #2A9095, -6px 6px 0 0 #2A9095, -5px 5px 0 0 #2A9095, -4px 4px 0 0 #2A9095, -3px 3px 0 0 #2A9095, -2px 2px 0 0 #2A9095, -1px 1px 0 0 #2A9095;
+}
+
+.name {
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -.015em;
+    line-height: 64px;
+    transition: color .2s ease;
+}

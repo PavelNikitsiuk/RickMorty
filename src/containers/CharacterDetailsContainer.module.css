@@ -1,0 +1,20 @@
+.navButton {
+    transition: background .2s;
+}
+
+.iconLeft {
+    font-size: 32px;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    transition: width .8s ease;
+}
+
+.navButton:hover > .iconLeft {
+    width: 0;
+}
+
+.navButton:hover {
+    cursor: pointer;
+    background: lightcyan;
+}

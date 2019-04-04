@@ -1,11 +1,14 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import {withRouter} from "react-router";
+import styles from './Character.module.css';
 
 class Character extends PureComponent {
 	static propTypes = {
-		name: PropTypes.string,
-		image: PropTypes.string,
+		character: PropTypes.shape({
+			name: PropTypes.string,
+			image: PropTypes.string,
+		})
 	};
 
 	onDetailsPressed(id) {
@@ -13,12 +16,12 @@ class Character extends PureComponent {
 	};
 
 	render() {
-		const {id, name, image} = this.props.character;
+		const { character } = this.props;
 
 		return (
-			<div className="card" onClick={this.onDetailsPressed.bind(this, id)}>
-				<img src={image} alt={name}/>
-				<h2>{name}</h2>
+			<div className={`${styles.button} ${styles.card}`} onClick={this.onDetailsPressed.bind(this, character.id)}>
+				<img src={character.image} alt={character.name}/>
+				<h2>{character.name}</h2>
 			</div>
 		);
 	}
